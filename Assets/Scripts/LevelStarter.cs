@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class LevelStarter : MonoBehaviour
 {
-    [SerializeField] private LevelData _levelData;
-    
-    
+    [SerializeField] private CurrentLevelData _levelData;
+
+    private void Awake()
+    {
+        
+    }
 }

@@ -1,11 +1,10 @@
+using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameStarter : MonoBehaviour
-{
-    [SerializeField] private Cell _cellPrefab;
-
-    private void Start()
-    {
-        Instantiate(_cellPrefab, transform);
-    }
+{ 
+    public CurrentLevelData CurrentLevelData => _currentLevelData;
+    
+    [SerializeField] private CurrentLevelData _currentLevelData;
 }
