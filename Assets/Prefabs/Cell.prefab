@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4586958343835524155}
   - component: {fileID: 269431424159124413}
+  - component: {fileID: 9111288042372990148}
   m_Layer: 3
   m_Name: CardHolder
   m_TagString: Untagged
@@ -70,18 +71,31 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.39, y: 3.11}
+  m_Size: {x: 2.96, y: 3.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9111288042372990148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878932528440215175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44afab8934564d12957cea28826940cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardSpriteRenderer: {fileID: 269431424159124413}
 --- !u!1 &6726514378196685689
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +108,7 @@ GameObject:
   - component: {fileID: 6606865592791565249}
   - component: {fileID: 3923453235533457221}
   - component: {fileID: 434707435736090730}
+  - component: {fileID: 1512844361470739554}
   m_Layer: 3
   m_Name: Cell
   m_TagString: Cell
@@ -180,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0516cdd303c549b4aa013e519ca2c4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cellSpriteRenderer: {fileID: 6606865592791565249}
-  _cardSpriteRenderer: {fileID: 269431424159124413}
+  _bouncer: {fileID: 1512844361470739554}
+  _cardHolder: {fileID: 9111288042372990148}
   _backgroundSpriteRenderer: {fileID: 3880693009070537903}
 --- !u!65 &434707435736090730
 BoxCollider:
@@ -196,6 +211,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.984375, y: 0.984375, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1512844361470739554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726514378196685689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b103a5e120402287296ad54c11afbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bounceDuration: 2
 --- !u!1 &7189686549428724453
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +294,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5177388603050735206, guid: 71ebafeef3c03457483266a33ab2b270, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

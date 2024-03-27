@@ -1,10 +1,18 @@
-using ScriptableObjects;
+using CellHandlers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class GameStarter : MonoBehaviour
-{ 
-    public CurrentLevelData CurrentLevelData => _currentLevelData;
-    
-    [SerializeField] private CurrentLevelData _currentLevelData;
+{
+    [SerializeField] private LevelController _levelController;
+    [SerializeField] private CellsController _cellsController;
+
+    private void Awake()
+    {
+        _levelController.Run();
+    }
+
+    private void Start()
+    {
+        _cellsController.ShowCells();
+    }
 }
