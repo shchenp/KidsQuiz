@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace DOTweenAnimations
 {
-    public class Bouncer : MonoBehaviour
+    public class ScaleBouncer : MonoBehaviour
     {
         [SerializeField] private float _bounceDuration;
 

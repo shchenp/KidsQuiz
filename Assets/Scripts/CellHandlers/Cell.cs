@@ -8,26 +8,17 @@ namespace CellHandlers
 {
     public class Cell : MonoBehaviour
     {
-        [SerializeField] private Bouncer _bouncer;
+        [SerializeField] private ScaleBouncer _scaleBouncer;
         [SerializeField] private CardHolder _cardHolder;
         [SerializeField] private SpriteRenderer _backgroundSpriteRenderer;
-    
-        private CardData _cardData;
 
         public void SetCardData(CardData cardData)
         {
-            _cardData = cardData;
-        
             Initialize(cardData);
         }
 
         private void Initialize(CardData cardData)
         {
-            if (_cardData.IsNeedToRotate)
-            {
-                transform.Rotate(_cardData.Rotation);
-            }
-        
             _backgroundSpriteRenderer.SetRandomColor();
 
             _cardHolder.Initialize(cardData);
@@ -35,7 +26,7 @@ namespace CellHandlers
 
         public void Bounce()
         {
-            _bouncer.Bounce();
+            _scaleBouncer.Bounce();
         }
     }   
 }

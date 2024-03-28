@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Extensions;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,20 +13,18 @@ namespace CardHandlers
         private readonly List<CardData> _usedTargetsCards = new List<CardData>();
         private readonly List<CardData> _usedCards = new List<CardData>();
 
-        private CardData _target;
-
         public void Add(CardData cardData)
         {
             _usedCards.Add(cardData);
         }
 
-        public void SetNewTarget(CardData cardData)
+        public void SetNewTarget()
         {
-            _target = cardData;
+            var target = _usedCards.GetRandomCardData();
         
-            _usedTargetsCards.Add(cardData);
+            _usedTargetsCards.Add(target);
         
-            TargetChanged.Invoke(cardData);
+            TargetChanged.Invoke(target);
         }
 
         public bool IsCardUsed(CardData cardData)
@@ -33,12 +32,7 @@ namespace CardHandlers
             return _usedCards.Contains(cardData) || _usedTargetsCards.Contains(cardData);
         }
 
-        public bool IsCardATarget(CardData cardData)
-        {
-            return cardData == _target;
-        }
-
-        public void RemoveList()
+        public void ClearUsedCardsList()
         {
             _usedCards.Clear();
         }

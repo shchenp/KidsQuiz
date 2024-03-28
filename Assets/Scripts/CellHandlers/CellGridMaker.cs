@@ -1,5 +1,6 @@
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CellHandlers
 {
@@ -7,6 +8,7 @@ namespace CellHandlers
     {
         [SerializeField] private Cell _prefab;
         [SerializeField] private CellsController _cellsController;
+        [SerializeField] private UnityEvent _gridCreated;
     
         private LevelData _levelData;
     
@@ -46,11 +48,13 @@ namespace CellHandlers
             
                 _cellsController.Add(cell);
             }
+            
+            _gridCreated.Invoke();
         }
 
         public void DestroyGrid()
         {
-        
+            _cellsController.ResetCellsList();
         }
     
         private void SetNewMatrix()
