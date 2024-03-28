@@ -5,23 +5,16 @@ namespace CardHandlers
 {
     public class TargetCardHandler : MonoBehaviour
     {
-        private CardData _targetCard;
+        public CardData TargetCard { get; private set; }
 
+        /// <summary>
+        /// переместить сюда партикл и логику его появления
+        /// в КардХолдер заинжектить этот класс и проверять данные через ЧекКард
+        /// </summary>
+        /// <param name="cardData"></param>
         public void SetTargetCard(CardData cardData)
         {
-            _targetCard = cardData;
-        }
-
-        public void CheckCard(CardHolder cardHolder)
-        {
-            if (cardHolder.CardData == _targetCard)
-            {
-               
-            }
-            else
-            {
-                
-            }
+            TargetCard = cardData;
         }
     }
 }

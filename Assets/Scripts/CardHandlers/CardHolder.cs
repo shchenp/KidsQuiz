@@ -1,24 +1,35 @@
+using DOTweenAnimations;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using VContainer;
 
 namespace CardHandlers
 {
     public class CardHolder : MonoBehaviour, IPointerClickHandler
     {
-        public CardData CardData { get; private set; }
-
         [SerializeField] private SpriteRenderer _cardSpriteRenderer;
-        
+        [SerializeField] private ScaleBouncer _scaleBouncer;
+        [SerializeField] private PositionEaseInBouncer _positionEaseInBouncer;
+
+        private CardData _cardData;
+        private TargetCardHandler _targetCard;
         private ParticleHandler _particleHandler;
+
+        [Inject]
+        public void Construct(TargetCardHandler targetCardHandler, ParticleHandler particleHandler)
+        {
+            _targetCard = targetCardHandler;
+            _particleHandler = particleHandler;
+        }
 
         public void Initialize(CardData cardData)
         {
-            CardData = cardData;
+            _cardData = cardData;
             
-            if (CardData.IsNeedToRotate)
+            if (_cardData.IsNeedToRotate)
             {
-                transform.Rotate(CardData.Rotation);
+                transform.Rotate(_cardData.Rotation);
             }
             
             _cardSpriteRenderer.sprite = cardData.Sprite;
@@ -26,7 +37,25 @@ namespace CardHandlers
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            
+            if (_cardData == _targetCard.TargetCard)
+            {
+                OnTargetClicked();
+            }
+            else
+            {
+                OnWrongClicked();
+            }
+        }
+
+        private void OnTargetClicked()
+        {
+            _scaleBouncer.Bounce();
+            _particleHandler.PlayOnPosition(transform.position);
+        }
+
+        private void OnWrongClicked()
+        {
+            _positionEaseInBouncer.EaseInBounce();
         }
     }   
 }

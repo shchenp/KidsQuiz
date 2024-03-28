@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CellHandlers
 {
-    public class CellsController : MonoBehaviour
+    public class CellsAnimatorController : MonoBehaviour
     {
         [SerializeField] private CardBundleHandler _cardBundle;
     

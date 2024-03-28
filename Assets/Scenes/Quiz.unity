@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &258616584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6938624633715049216, guid: da9d5837b15bd8b4bb0a6edd279d3805, type: 3}
+  m_PrefabInstance: {fileID: 833175935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &279468816
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3923453235533457221, guid: e1c2e5fd5fce573408fc0cb918006099, type: 3}
-  _cellsController: {fileID: 1407127723}
+  _cellsAnimatorController: {fileID: 1407127723}
   _gridCreated:
     m_PersistentCalls:
       m_Calls:
@@ -763,6 +768,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9d5837b15bd8b4bb0a6edd279d3805, type: 3}
+--- !u!114 &833175936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6938624633715049230, guid: da9d5837b15bd8b4bb0a6edd279d3805, type: 3}
+  m_PrefabInstance: {fileID: 833175935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258616584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19656e1ff1a4ba748b756f7824130298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &868744260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1104,7 @@ GameObject:
   - component: {fileID: 1407127724}
   - component: {fileID: 1407127723}
   m_Layer: 0
-  m_Name: CellsController
+  m_Name: CellsAnimatorController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1368,6 +1384,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885174318}
   m_CullTransparentMesh: 1
+--- !u!1 &1920981144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920981146}
+  - component: {fileID: 1920981145}
+  m_Layer: 0
+  m_Name: GameLifeTimeScope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1920981145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920981144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05c94cdc6f102746a0924ae7b43b426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentReference:
+    TypeName: 
+  autoRun: 1
+  autoInjectGameObjects:
+  - {fileID: 258616584}
+  - {fileID: 513120072}
+  _cellPrefabs: {fileID: 11400000, guid: 2e7bbc7282c459f49b5b1d3281fd4640, type: 2}
+  _particleHandler: {fileID: 833175936}
+  _cellGridMaker: {fileID: 513120073}
+  _targetCard: {fileID: 1018834541}
+--- !u!4 &1920981146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920981144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.121511, y: 48.32804, z: 102.71511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1972006655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelController: {fileID: 279468817}
-  _cellsController: {fileID: 1407127723}
+  _cellsAnimatorController: {fileID: 1407127723}
   _textCanvasGroupFader: {fileID: 1502625672}
 --- !u!4 &1972006657
 Transform:

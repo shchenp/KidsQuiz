@@ -12,7 +12,7 @@ namespace DOTweenAnimations
 
         private void Awake()
         {
-            _defaultScale = transform.lossyScale.x;
+            _defaultScale = transform.localScale.x;
         
             _step = _bounceDuration / 4f;
         }

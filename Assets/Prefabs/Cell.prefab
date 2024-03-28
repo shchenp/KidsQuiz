@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4586958343835524155}
   - component: {fileID: 269431424159124413}
-  - component: {fileID: 9111288042372990148}
   - component: {fileID: 6212092802372190858}
+  - component: {fileID: 9111288042372990148}
+  - component: {fileID: 2126949187936276979}
+  - component: {fileID: 1769240930716922513}
   m_Layer: 3
   m_Name: CardHolder
   m_TagString: Untagged
@@ -84,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9111288042372990148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878932528440215175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44afab8934564d12957cea28826940cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cardSpriteRenderer: {fileID: 269431424159124413}
 --- !u!65 &6212092802372190858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,6 +99,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9111288042372990148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878932528440215175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44afab8934564d12957cea28826940cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardSpriteRenderer: {fileID: 269431424159124413}
+  _scaleBouncer: {fileID: 2126949187936276979}
+  _positionEaseInBouncer: {fileID: 1769240930716922513}
+--- !u!114 &2126949187936276979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878932528440215175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b103a5e120402287296ad54c11afbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bounceDuration: 3
+--- !u!114 &1769240930716922513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878932528440215175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c05837aace46a2aa81ba07bba8fbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 2
 --- !u!1 &6726514378196685689
 GameObject:
   m_ObjectHideFlags: 0
