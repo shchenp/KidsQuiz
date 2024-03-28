@@ -25,8 +25,10 @@ namespace CellHandlers
         {
             foreach (var cell in _cells)
             {
-                Destroy(cell);
+                Destroy(cell.gameObject);
             }
+            
+            _cells.Clear();
         }
 
         public void ShowCells()

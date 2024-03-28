@@ -8,5 +8,10 @@ namespace ScriptableObjects
         public LevelData CurrentLevel => _currentLevelData;
         
         [SerializeField] private LevelData _currentLevelData;
+
+        public void SetCurrentLevel(LevelData levelData)
+        {
+            _currentLevelData = levelData;
+        }
     }
 }

@@ -21,7 +21,12 @@ namespace CardHandlers
         public void SetNewTarget()
         {
             var target = _usedCards.GetRandomCardData();
-        
+
+            if (_usedTargetsCards.Contains(target))
+            {
+                SetNewTarget();
+                return;
+            }
             _usedTargetsCards.Add(target);
         
             TargetChanged.Invoke(target);
@@ -29,7 +34,7 @@ namespace CardHandlers
 
         public bool IsCardUsed(CardData cardData)
         {
-            return _usedCards.Contains(cardData) || _usedTargetsCards.Contains(cardData);
+            return _usedCards.Contains(cardData);
         }
 
         public void ClearUsedCardsList()

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 777d74ea18024b3aac5e7449c117b313, type: 3}
-  m_Name: LevelManager
+  m_Name: CurrentLevelHolder
   m_EditorClassIdentifier: 
   _currentLevelData: {fileID: 11400000, guid: a55ebf72000c0144bb66fd6c846ad247, type: 2}

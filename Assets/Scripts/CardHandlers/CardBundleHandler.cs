@@ -11,12 +11,7 @@ namespace CardHandlers
     
         private CardBundleData _cardBundleData;
 
-        private void Awake()
-        {
-            GetNewBundle();
-        }
-
-        private void GetNewBundle()
+        public void GetNewBundle()
         {
             _cardBundleData = _bundleGenerator.GetRandomBundle();
         }

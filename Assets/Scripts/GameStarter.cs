@@ -1,16 +1,18 @@
 using CellHandlers;
 using DOTweenAnimations;
+using LevelHandlers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameStarter : MonoBehaviour
 {
-    [SerializeField] private LevelController _levelController;
+    [SerializeField] private LevelStarter _levelStarter;
     [SerializeField] private CellsAnimatorController _cellsAnimatorController;
     [SerializeField] private CanvasGroupFader _textCanvasGroupFader;
 
     private void Awake()
     {
-        _levelController.Run();
+        _levelStarter.Run();
     }
 
     private void Start()
