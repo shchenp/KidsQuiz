@@ -5,6 +5,8 @@ namespace DOTweenAnimations
 {
     public class CanvasGroupFader : MonoBehaviour
     {
+        public float FadeDuration => _fadeDuration;
+        
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private float _fadeDuration;
 
