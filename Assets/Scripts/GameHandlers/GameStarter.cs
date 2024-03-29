@@ -19,11 +19,6 @@ namespace GameHandlers
 
         private void Start()
         {
-            StartGame();
-        }
-
-        public void StartGame()
-        {
             _cellsAnimatorController.ShowCells();
             _textCanvasGroupFader.FadeIn();
         }
